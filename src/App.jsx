@@ -1,25 +1,15 @@
-import './App.css';
+import axios from 'axios';
+import { useEffect } from 'react';
 
-import Profile from './components/Profile/Profile.jsx';
-import FriendList from './components/FriendList/FriendList.jsx';
-import TransactionHistory from './components/TransactionHistory/TransactionHistory.jsx';
-
-import userData from './userData.json';
-import friendsList from './friends.json';
-import transactions from './transactions.json';
-
-export default function App() {
+const App = () => {
+  useEffect(() => {
+    axios.get('https://hn.algolia.com/api/v1/search?query-react').then(res => console.log(res.data));
+  }, []);
   return (
-    <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList list={friendsList} />
-      <TransactionHistory items={transactions} />
-    </>
+    <div>
+      <h2>HTTP</h2>
+    </div>
   );
-}
+};
+
+export default App;
