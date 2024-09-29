@@ -36,6 +36,7 @@ const App = () => {
 
   const handleChangePage = () => {
     setPage(prev => prev + 1);
+  
   };
 
   const handleSetQuery = (topik) => {
