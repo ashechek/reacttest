@@ -16,6 +16,9 @@ const App = () => {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
+
+    if (!query) { return };
+
     const getData = async () => {
       try {
         setIsError(false);
